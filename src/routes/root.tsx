@@ -5,10 +5,8 @@ import Header from '../components/header/Header';
 export default function Root() {
   return (
     <>
-      <Container>
-      </Container>
       <Header />
-      <Container maxWidth="lg">
+      <Container>
         <Outlet />
       </Container>
     </>

@@ -1,9 +1,24 @@
+import { Card, Grid } from '@mui/material';
+
 const CoverLetterGenerator = () => {
   return (
-    <>
-      <h1>Hello World</h1>
-      <a href="#test">Some</a>
-    </>
+    <Grid container spacing={3}>
+      <Grid item xl={4}>
+        <Card variant='outlined'>
+          Step 1
+        </Card>
+      </Grid>
+      <Grid item xl={4}>
+        <Card variant='outlined'>
+          Step 2
+        </Card>
+      </Grid>
+      <Grid item xl={4}>
+        <Card variant='outlined'>
+          Step 3
+        </Card>
+      </Grid>
+    </Grid>
   );
 };
 
