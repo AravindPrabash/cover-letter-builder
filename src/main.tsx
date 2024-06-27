@@ -1,37 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from 'react-router-dom';
-import './index.scss';
-import Root from './routes/root';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import CoverLetterGenerator from './routes/cover-letter-generator';
+import 'normalize.css';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
+import App from './App';
 import { store } from './app/store';
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Root />,
-    errorElement: <div>Oops</div>,
-    children: [
-      {
-        path: '',
-        element: <CoverLetterGenerator />,
-      },
-    ],
-  },
-]);
+import './index.scss';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router} />
+      <App />
     </Provider>
   </React.StrictMode>,
 );
