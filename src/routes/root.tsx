@@ -5,9 +5,7 @@ export default function Root() {
   return (
     <div>
       <Header />
-      <div className="pt-4 max-w-screen-xl m-auto">
-        <Outlet />
-      </div>
+      <Outlet />
     </div>
   );
 }
