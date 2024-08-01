@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import coverLetterSlice from '../routes/cover-letter-generator/coverLetterSlice';
+import shopReducer from '../routes/shop/shopSlice';
 
 export const store = configureStore({
   reducer: {
-    coverLetter: coverLetterSlice,
+    shop: shopReducer,
   },
 });
 

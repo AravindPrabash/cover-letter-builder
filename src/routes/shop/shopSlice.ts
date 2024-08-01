@@ -1,18 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 // Define a type for the slice state
-interface CoverLetterState {
+interface ShopState {
   status: 'succeeded' | 'idle',
   response?: Record<string, never>,
 }
 
 // Define the initial state using that type
-const initialState: CoverLetterState = {
+const initialState: ShopState = {
   status: 'idle',
 };
 
-export const coverLetterSlice = createSlice({
-  name: 'coverLetter',
+export const shopSlice = createSlice({
+  name: 'shop',
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
@@ -22,6 +22,6 @@ export const coverLetterSlice = createSlice({
   },
 });
 
-export const { changeStatus } = coverLetterSlice.actions;
+export const { changeStatus } = shopSlice.actions;
 
-export default coverLetterSlice.reducer;
+export default shopSlice.reducer;
