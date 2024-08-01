@@ -1,0 +1,21 @@
+/* establish a layer order up-front, from lowest to highest priority */
+@layer resets, defaults, overrides;
+
+:root {
+  font-family: 'Roboto', Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --common-white: #ffffff;
+  --common-text: #232323;
+  --common-outline: rgba(0, 0, 0, 0.16);
+}
+
+@layer reset {
+  @import './styles/resets';
+}
+
+@layer defaults {}
