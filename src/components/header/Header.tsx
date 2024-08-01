@@ -1,8 +1,6 @@
-import styles from './header.module.scss';
-
 const Header = () => (
   <div>
-    <div className={styles.top}>
+    <div className="text-slate-900 text-3xl font-bold underline">
       <h2>✨ Cover Letter with Ai</h2>
     </div>
   </div>

@@ -1,4 +1,4 @@
-const CoverLetterGenerator = () => {
+const Shop = () => {
   return (
     <div>
       Hellow!!!
@@ -6,4 +6,4 @@ const CoverLetterGenerator = () => {
   );
 };
 
-export default CoverLetterGenerator;
+export default Shop;
