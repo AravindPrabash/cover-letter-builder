@@ -1,27 +1,28 @@
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import type { RootState, AppDispatch } from './store';
-import { useState, useEffect, Dispatch, SetStateAction } from 'react';
+import type { AppDispatch, RootState } from './store';
+import { toggleTheme } from './theme';
+import { Theme, UseDarkSideReturn } from './types';
 
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
 export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
 export const useAppSelector = useSelector.withTypes<RootState>();
 
-type Theme = 'light' | 'dark';
-type UseDarkSideReturn = [Theme, Dispatch<SetStateAction<Theme>>];
-
-
 export const useDarkSide = (): UseDarkSideReturn => {
-  const [theme, setTheme] = useState<Theme>((localStorage.theme as Theme) || 'light');
+  const theme = useSelector((state: RootState) => state.theme.theme);
+  const dispatch = useDispatch();
+
   const colorTheme: Theme = theme === 'dark' ? 'light' : 'dark';
-  localStorage.setItem('theme', theme);
+
+  const setTheme = () => {
+    dispatch(toggleTheme());
+  };
+
   useEffect(() => {
     const root = window.document.documentElement;
     root.classList.remove(colorTheme);
     root.classList.add(theme);
-    if (localStorage.theme == 'light')
-      localStorage.removeItem('theme');
-    else localStorage.setItem('theme', theme);
   }, [theme, colorTheme]);
 
-  return [colorTheme, setTheme];
+  return [theme, setTheme] as const;
 };
