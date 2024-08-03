@@ -18,6 +18,7 @@ const NavLinks = () => (
 
 const Header = () => {
   const theme = useSelector((state: RootState) => state.theme.theme) as Theme;
+
   return (
     <div className="sticky top-0 bg-slate-50 dark:bg-slate-950 border-b border-b-slate-300 dark:border-b-slate-600 p-4 backdrop-blur">
       <div className="flex justify-between max-w-screen-xl m-auto">
