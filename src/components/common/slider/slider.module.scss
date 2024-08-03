@@ -1,0 +1,13 @@
+.default {
+  opacity: 0;
+  transition: opacity 2s;
+  transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+}
+
+.active {
+  opacity: 1;
+}
+
+.wrapper {
+  display: flex;
+}
